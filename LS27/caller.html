@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*var func = function(n){
+        if(n <= 0)
+        return 1;
+        else
+        return n * arguments.caller(n - 1);
+    };
+    console.log(func(4));*/
+
+    var objA = {"objName":"AAA"};
+    var objB = {"objName":"BBB"};
+    objA.foo = function(){
+        console.log(this.objName);
+    }
+
+    objA.foo();
+    //方法.call(对象)
+    objA.foo.call(objB);
+
+
+    function Person(username){
+        this.username = username;
+        this.sayHi = function(){
+            console.log(this.username);
+    }
+    //Person.call(this,username)
+    //其具有一个指定的this值和分别的提供的参数（参数的列表）
+    function Student(username,age,sex){
+        Person.call(this,username,age);
+        //方法call会被调用一次
+        //Person.apply(this,[username,age]);
+        this.sex = sex;
+        }
+    }
+
+    var person = new Person("zhangsan");
+    var student = new Student("lisi",20,"male");
+    console.log(student);
+
+    //bind
+    var objC = {
+        "objName":"AAA",
+        "foo":function(){
+            console.log(this.objName);
+        }
+    }
+    var objD = {"objName":"BBB"};
+    var foo2 = objA.foo.bind(objD);
+    foo2(); 
+
+    var obj1 = {x:3};
+    function fn1(){
+        function fn2(){
+            console.log(this.x);
+        }
+        return fn2;
+    }
+    obj.fn3 = fn1;
+    obj.fn4 = fn1();
+
+    obj.fn3();
+    obj.fn4();
+
+    var obj2 = {
+        x:1,
+        fn1:function(){
+            var that = this;
+            function fn2(){
+                console.log(that.x);
+            }
+            console.log(this.x);
+            fn2;
+        }
+    }
+
+
+</script>
+</html>

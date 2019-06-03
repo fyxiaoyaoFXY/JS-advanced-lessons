@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1、飞严格模式下，this指向window对象
+    //2、严格模式下，this是undefined
+    //3.this是谁，取决于函数调用的主体
+    var x=10;
+    console.log(window.x);
+    function thisTest(){
+        console.log(this);
+        console.log(this===window)
+    }
+    thisTest();
+
+    function thisTest(){
+        'user strict';
+        console.log(this);
+        return this===undefined?true:false;
+    }
+    thisTest();
+
+    var point = {
+        x:0,
+        y:0,
+        moveTO:function(x,y){
+            this.x=x;
+            this.y=y;
+        }
+    }
+    //1、直接定义在对象下的方法，调用主体就是当前对象
+    //2、前提是没有函数嵌套
+    point.moveTO(10,10);
+
+    function Point(x,y){
+        this.x=x;
+        this.y=y;
+        this.moveTO=function(x,y){
+            this.x=x;
+            this.y=y;
+        }
+    }
+    var p=new Point(10,10);
+    //1、this指向函数调用的主体
+    p.moveTO(15,15);
+
+
+
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var point = {
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            function moveTo(x){
+                this.x=x;
+            }
+            function moveTo(y){
+                this.y=y;
+            }
+            //切换movetox函数的调用主体，并且执行movetox；
+            moveToX.call(this.x);
+            moveToY.call(this.y);
+        }
+    }
+    point.moveTo();
+</script>
+</html>

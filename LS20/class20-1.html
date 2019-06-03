@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+     var str="abcdef adf kil adffffff";
+    var reg1=/adf/gi;
+    console.log(str.match(reg1));
+
+    var reg2=/adf*/gi;
+    console.log(str.match(reg2));//‘*’表示前面字符出现的次数
+
+    var reg3=/a.c/gi;
+    console.log(str.match(reg3));//‘.’表示任意一个字符
+
+    /*
+    字符类别：
+    \d表示的是任意的阿拉伯数字[0-9]
+    \D表示在特定位置上不是一个阿拉伯数字[^0-9]
+    */
+   var reg4=/a\dc/gi;
+   var reg4_2=/a\Dc/gi;
+   var str4="a2c a3c abc";
+   console.log(str4.match(reg4));
+   console.log(str4.match(reg4_2));
+
+</script>
+</html>

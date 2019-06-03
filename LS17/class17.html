@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var superobj={
+        x:1,
+        y:2
+    };
+    var subobj_first=Object.create(superobj);
+    var subobj_second=Object.create(superobj);
+    subobj_first.__proto__.x=5;
+    console.log(subobj_second.x);
+</script>
+</html>

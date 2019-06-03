@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //对象 instanceof 构造函数
+    //1、判断这个对象能否使用后面的构造函数实例化得到
+    //2、判断能否在对象的原型链上找到构造函数的prototype
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+    }
+    var person = new Person("zhangsan",20);
+    person instanceof Person;
+    console.log(person);
+    console.log(person._proto_ == Person.prototype);
+    //判断能否在person的原型链上找到object构造函数的prototype
+    console.log(person instanceof Object);
+    //console.log(person._proto_._proto_);
+    console.log(Object._proto_);
+
+    //Math和JSON是函数
+    console.log(Math instanceof Object);
+    console.log(JSON instanceof Object);
+
+    function fn1(x){
+        //arguments获取函数调用时传入的实参，类数组结构
+        for(var i = 0;i < arguments.length;i++){
+            console.log(arguments[i]);
+        }
+        console.log(fn1.length);
+        //函数名.length属性表示的是形参的个数
+
+    }
+
+    fn1(10,5,3);
+
+    function fn2(){
+        console.log(fn1.caller);
+    }
+    function fn3(){
+        fn2();
+    }
+
+    fn2();
+    fn3();
+
+    var func = function(n){
+        if(n <= 0)
+        return 1;
+        else
+        return n * arguments.caller(n - 1);
+    };
+    console.log(func(4));
+
+    var objA = {"objName":"AAA"};
+    var objB = {"objName":"BBB"};
+    objA.foo = function(){
+        console.log(this.objName);
+    }
+
+    objA.foo();
+    //方法.call(对象)
+    objA.foo.call(objB);
+
+
+
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            background: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>层1</div>
+    <div>层2</div>
+    <div>层3</div>
+</body>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js">
+</script>
+<script>
+    $("div").mouseover(function(){
+        $(this).css("background","red");
+    })
+    $("div").mouseout(function(){
+        $(this).css("background","grey");
+    })
+    $("div").click(function(){
+        $(this).css("background","purple");
+    })
+    //或者是
+    $("div").mouseover(function(){
+        $(this).css("background","red");
+    }).mouseout(function(){
+        $(this).css("background","grey");
+    }).click(function(){
+        $(this).css("background","purple");
+    })
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var point={
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            function moveToX(){
+                this.x=x;
+            }
+            function moveToY(){
+                this.y=y;
+            }
+//函数.bind（对象）切换函数的调用主体生成了一个新的函数，并且是不会立即执行的
+            moveToX.bind(this);
+        }
+    }
+    point.moveTo();
+</script>
+</html>

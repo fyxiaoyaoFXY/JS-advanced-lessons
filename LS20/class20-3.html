@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    ^匹配开始的位置
+    */
+    var reg1=/^a[0-9]/gi;
+    var str1="a1 b2 c3 a4";
+    str1.match(reg1);
+    /*
+    匹配字符串结束位置
+    */
+    var reg2=/[0-9]z$/gi;
+    var str2="abcd9z";
+    var str2_2="befbdfbdbf9";
+    console.log(reg2.test(str));
+    console.log(reg.test(str2_2));
+
+    console.log(str2.match(reg2));
+    console.log(str2_2.match(reg2));
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function fn1({x=0,y=0}={}) {
+        return [x,y];
+    }
+    console.log(fn1());
+    console.log(fn1({x:1,y:2}));
+
+    let [x,y]=['a','b'];
+    let [y,x]=[x,y];
+    console.log(x,y);
+
+    function example(){
+        return[1,2,3];
+    }
+    let [a,b,c]=example();
+    console.log(a,b,c);
+
+
+
+    let json1= {
+        "username":"zhangsan",
+        "courseList":["高等数学","大学英语"],
+        "age":20
+    }
+    //JSON MATH都是对象，没有构造函数
+    let jsonStr=JSON.stringify(json1);
+    console.log(typeof jsonStr);
+    json1=JSON.parse(jsonStr);
+
+    let {username}=json1;
+    console.log(username);
+</script>
+</html>

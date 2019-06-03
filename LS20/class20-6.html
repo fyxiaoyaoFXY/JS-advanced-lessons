@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    分组可以看作当前正则表达式的子规则，分组匹配得到的内容，可以在exec方法中调用的返回结果中查看
+
+    */
+    var reg1 = /(abc)\d/gi;
+    //var reg2 = /(abc)\d(\def)\d/gi;
+    var str="abc1efg2";
+    var result=reg1.exec(str);//执行搜索指定字符串中的匹配。返回结果数组，或null。
+    console.log(result);//会将子结构即本例中的abc也放在数组里面输出来
+
+
+    /*
+    反向引用，通过\m 来引用前面出现的分组
+    m表示前面出现的第几个分组
+    */
+    var reg2 = /(\d)a\1/gi;
+    var reg3 = /(\d)a(\d)/gi;
+
+    var str2="2a1sss";
+    str2.replace(reg2,"x");
+</script>
+</html>

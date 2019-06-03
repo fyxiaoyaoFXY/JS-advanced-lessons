@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    数量词：
+    ?表示之前的字符出现零次或者一次
+    +表示之前出现一次或者多次
+    x{m,n}m出现的最小，n出现的最多
+    */
+    var reg1=/abc?/gi;
+    var str="abc ab kkk";
+    str1.replace(reg1,"x");
+
+    var reg2=/abc+/gi;
+    var str2="abc abcccc abccc";
+    str.replace(reg2,"x");
+
+    var reg3=/abc{1,3}/gi;
+    var str3="abc abcc abccc abccccc";
+    str3.replace(reg3,"x");
+</script>
+</html>

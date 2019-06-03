@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function foo(){
+        var arr1 = [];
+        for(var i = 0;i<10;i++){
+            //形成10个作用域 作用域内的j值各不相同 并且不共享
+            //添加了一个匿名函数
+            (function (j){
+                arr1[j] = function (){
+                    return j;
+                }
+            })(i)
+            //独立作用域互不影响 相互独立 说明有十个j的取值都为0到9
+
+            arr1[i] = function(){
+                return i;
+            }
+        }
+        return arr1;
+    }
+    var arr2 = foo();
+    arr2[0]();
+
+    for(var i = 0;i<10;i++){
+       // arr1[i] = function(){
+         //   return i;
+        //}
+    }
+
+
+    var spanList = document.getElementsByTagName("sapn");
+    var show = document.getElementsByClassName("show")[0];
+    for(var i = 0;i<spanList.length;i++){
+        spanList[i].onclick = function(){
+            show.innerHTML = "导航" + i + "内容";
+        }
+    }
+</script>
+</html>

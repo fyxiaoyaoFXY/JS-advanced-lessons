@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {x:1};
+    Object.defineProperty(obj,'y',{enumerable:false});
+    for(var i in obj){
+        console.log(i,obj[i]);
+    }
+    var person = {'name' : "jack"};
+
+    Object.defineProperty(person,'name',{
+        //name属性是不可修改的
+        writable:false,
+        //是否可配置，定义的属性能否删除
+        configurable:false,
+        //是否可枚举，定义属性值能否被遍历到
+        enumerable:true,
+        //定义属性值
+        value:"mike"
+    });
+    person.name="lily";
+    console.log(person.name);
+    delete person.name;
+    console.log(person.name);
+    for(var i in person){
+        console.log(person[i]);
+    }
+
+    
+</script>
+</html>

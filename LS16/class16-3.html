@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var objA={name:'AA',x:1};
+    var objB={name:'BB',x:2};
+    function test(){
+        console.log(this.name);
+        console.log(this.x);
+    }
+    objA.fun=test;
+    objA.fun();
+    //方法A.call（对象）；切换方法A的调用主体，this指向函数的调用主体
+    //方法.call（要切换的调用对象，arg1，arg2，arg3）；
+
+    //方法B.apply（要切换的调用对象，[arg1，arg2，arg3]）; 
+    objA.fun.call(objB,3);
+
+    var point = {
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            function moveTo(x){
+                console.log(this);
+                this.x=x;
+            }
+            function moveTo(y){
+                this.y=y;
+            }
+            moveTo(x);
+            moveTo(y);
+        }
+    }
+    point.moveTo(10,10);
+    console.log(point);
+</script>
+</html>

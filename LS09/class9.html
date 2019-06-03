@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //函数和变量在完成定义以后，作用域就都是确定的和调用形式没有关系
+    var username = "jack";
+    function foo(){
+        username = "bill";
+        console.log(username);
+    }
+    function bar(){
+        var username = "mike";
+        foo();
+        console.log(username);
+    }
+    bar();
+
+    //ES6
+    if(true){
+        let b = 3;
+    }
+    console.log(b);
+
+    //ES5没有块作用域,只有函数的局部作用域
+    if(true){
+        var a = 2;
+    }
+    console.log(a);
+
+    var useId = 5;
+    document.onclick = function(){
+        console.log(userId);
+        userId = 10;
+    }
+    //
+    if(true){
+        var userId = 30;
+    }
+    (function() {
+        if(true){
+            var userId = 30;
+        }
+    })()
+
+</script>
+</html>

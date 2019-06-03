@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+        <table>
+                <tr>
+                    <td>用户名：</td>
+                    <td>
+                        <input type="text" name="username" id="username"/>
+                        <span class="error"></span>
+                    </td>
+                </tr>
+                <tr>
+                        <td>密码：</td>
+                        <td>
+                            <input type="password" name="mima" />
+                        </td>
+                </tr>
+                <tr>
+                        
+                        <td colspan="2">
+                            <input type="button" name="登录" />
+                        </td>
+                </tr>
+                
+            </table>
+</body>
+<script>
+    /*
+    val()通常用来设置或者获取表单元素value值
+    html()用于设置或获取双标记标签元素的标签内部的HTML内容
+    css()用预设值选中元素的样式 css（"样式名"，"样式值"）
+    css({"样式名":"样式值"})
+    */
+    $("#username").blur(function(){
+        var inputVal=$(this).val();
+        if(inputVal==""){
+            $(".error").html("用户名不能为空");
+            $(".error").css("color","red");
+            $(".error").css("font-size","40px");
+            $(".error").css({
+                "color":"pruple",
+                "font-size":"30px"
+            }); 
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js">
+    </script>
+    <style>
+        #container{
+            border:1px solid red;
+            margin:0 auto;
+            height:400px;
+            width:1000px;
+        }
+        img{
+            width:150px;
+        }
+        #btnlist{
+            width:1000px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="../4.jpg" id="img1">
+    </div>
+    <div id="btnlist">
+        <button id="after">
+            after
+        </button>
+    </div>
+</body>
+<script>
+    /*
+    1、向特定元素后面插入新的节点
+    after（） insertAfter（）
+    2、向特定元素的前面插入新的节点
+    before insertBefore（）
+    3、向特定元素标签内部最后的位置添加新的节点
+    4、向特定元素标签内部最前的位置添加新的节点
+    prepend（） prependTo（）
+    */
+    	/*
+		$(选择器).val();
+		$("html标记")
+		$(选择器).append();向选中元素内部添加一个新元素
+		$(选择器).remove();将特定元素从页面结构中移除
+	*/
+	$("#username").blur(function(){
+		var inputVal = $(this).val();
+		//.val()是获取value值
+		var errorTip = $("<span class='error'>用户名不能为空</span>");
+		if(inputVal == ""){
+			$(this).parent().append(errorTip);
+		}
+		else{
+			$(".error").remove();
+		}
+	})
+</script>
+</html>
+
+</script>
+</html>

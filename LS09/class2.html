@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo2</title>
+</head>
+<body>
+    <script>
+        //基本数据类型在操作过程中会有自动装箱的过程，
+        //生成临时对象，临时对象在使用完成之后会自动释放
+        var num = 10;
+        num.toString();
+
+
+
+
+        var num = 10;
+        var numObject = new Number(num);
+        numObject.toString();
+
+
+        num.p = 10;
+        var t = num.p;
+        console.log(t);
+
+
+        (345.67).toFixed(1);//选择保留响应的小数，而且会进行一个四舍五入的过程
+        var num1 = 11.26;
+        num1.toFixed(2);
+        var num2 = new Number(num1);
+        console.log(num2);
+        console.log(num1);
+
+        "abcde".charAt(2);//返回指定位置字母
+        var str1 = "abcdef";
+        var strobject = new String(str1);
+        strobject.charAt(2);
+
+
+        //基本数据类型，变量_proto_属性 == 变量的定义
+        //num._proto_ == Number.prototype
+        var num3 = 20;
+        console.log(num1._proto_);
+        console.log(Number.prototype);
+
+        var str = "abcdefgh";//返回索引位置的字符
+        str.charAt(1);//返回特定索引未知的字符的Unicode码
+        str.charCodeAt(0);
+
+        str.slice();//根据特定位置来切割
+        str.substr(0,3)//截取字符串的位置和截取字符串的长度
+        //截取字符串起始位置，截取字符串的结束位置  起始淄》结束位置，互换位置，但是如果超出索引位置 0 - str.length-1 自动截断
+        str.substring();
+
+        var strr = "abc*def*gh";
+        //split（特定的字符，限定元素的个数）特定字符串作为数组元素生成数组，以特定的字符分割
+        str.split("*",2);
+
+        var strr1 = "      abc  d      ";
+        strr1.trim();//字符串内部的不去除，去除字符串两边的空白字符串
+
+        //拼接字符串
+        str.concat();
+    </script>
+</body>
+</html>

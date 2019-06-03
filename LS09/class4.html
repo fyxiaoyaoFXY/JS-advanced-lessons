@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //发反写
+    var a = 45;
+    if(54 == a){
+        console.log("判等");
+    }
+    //= ==
+    var a1 = 20;
+    var a2 = '20';
+    //隐式的类型转换
+    if(a1 == a2){
+
+    }
+
+    //=== 先判断类型再判断值
+
+    if(a1 === a2){
+
+    }
+    //++ --的隐式类型转换
+    var x = "5";
+    console.log(++x);//先做运算再输出
+    console.log(x++);//先输出再做运算
+    console.log(x);
+    console.log(x += 1);//字符串拼接
+
+    var score = 91;
+    console.log((score > 90 && "优") || (score > 80 && "良"));
+
+    switch(true){
+        case score > 90:
+        console.log("优");
+        break;
+        case score > 80:
+        console.log("良");
+        break;
+        default:
+        console.log("不及格");
+        break;
+    }
+    //定义函数的形参和调用函数的实参个数可以不一致
+        //ESS中实现默认值的过程
+        function sum(x,y,z){
+            console.log(x,y,z);
+            x = x || 1;
+            y = y || 2;
+            z = z || 3;//||可以用来做函数默认的参数值
+            return x + y + z;
+        }
+        console.log(sum());
+        //ES6中设置函数默认值
+        function sum1(x,y = 2,z = 3){
+            return x + y + z;
+        }
+        
+        sum(1);
+
+    function sum(x,y){
+        return x + y;
+        }
+        sum(1,2);
+
+        window.onload = function(){
+            alert("页面正在加载")
+        }
+
+        //函数的定义会被解释器排序
+        function sum(x,y){
+            
+        }
+</script>
+</html>

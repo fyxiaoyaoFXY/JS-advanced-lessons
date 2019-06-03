@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //立即执行，有独立的作用域，不受其他代码影响；
+    //1.解决变量污染（重名等问题）;2.防止变量的非期望共享
+
+    (function(){
+        var i = 1;
+    })();
+
+    for(var i = 0;i<3;i++){
+        //1、元素绑定事件上；回调函数
+        //2、延迟执行、定时执行：if的一种操作；事件的一种操作
+        (function (){
+
+        })(i);//每次循环都会形成一个i，但是作用域之间不会相互影响，是相互独立的
+    }
+
+    //闭包；   是一种JavaScript中一种存在的运行机制
+    //最基本的闭包结构：一个外层函数fn1、内层函数fn2、
+    function fn1(){
+        var x = 0;
+        function fn2(){
+            return ++x;
+        }
+        return fn2;
+    }//内存函数引用了外层函数的变量
+    var result = fn1();
+    result();
+    result();//x一直保存在闭包中不会被释放，会一直加下去
+</script>
+</html>

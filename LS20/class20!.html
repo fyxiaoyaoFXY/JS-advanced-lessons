@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    /正则表达式的文本部分/正则表达式的标识符
+    [xzy]指的匹配中括号中任意的字符
+    标识符：
+    g表示是否全局检索,获取的所有的匹配项还是只获取第一个
+    i表示是否忽略大小写
+    */
+   var reg1=/[bcf]at/gi;
+   var reg2=new RegExp(/[bcf]at/,"gi");
+   var reg3=new RegExp("/[bcf]/at","gi");
+   var str="fat cat bat Fat apple efgh";
+   //str.match(reg1);//检索返回一个字符串匹配正则表达式的的结果。
+   var arr=str.match(reg1);
+   console.log(arr);
+</script>
+</html>

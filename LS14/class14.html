@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {
+        "x" : 1,
+        "y" : 2
+    }
+    var z = "age";
+    obj[z] = 20;
+    console.log(obj);
+
+    console.log(obj.x);
+    console.log(obj.y);
+
+    var obj1 = {
+        "username" : "zhangsan",
+        "age" : 20
+    };
+    var obj2 = Object.create(obj);
+    console.log(obj2);
+
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+    }
+    Person.prototype.sayHi = function(){
+        console.log(this.username);
+    }
+    var person1 = new Person("zhangsan",20);
+    console.log(person1.__proto__== Person.prototype);
+    var person2 = new Person("lisi",18);//sayHi方法提取出来了
+
+    person1.sayHi();
+    person2.sayHi();
+    /*
+    1.var obj = {
+        属性名：属性值，
+        方法名：方法
+    }
+    2.var obj1 = {};var obj2 = Object.create(obj1);
+    3.function Person() {};var person1 = new Person();
+    */
+</script>
+</html>

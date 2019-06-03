@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str = "abc";
+    var arr1 = ['a','b','c'];
+    var date1 = new Date();
+    console.log(typeof arr1);
+    console.log(typeof date1);
+    //对象 instanceof 构造函数
+    //1、看这个对象能否该构造函数实例化得到，能的话结果为true，不能的话就报错
+
+    var arr2 = [];
+    var arr2 = new Array;
+    arr2 instanceof Array;
+    
+    function Person(username){
+        this.username = username;
+    }
+    var person  = new Person("zhangsan");
+    person instanceof Person;
+
+    person instanceof Object;
+</script>
+</html>

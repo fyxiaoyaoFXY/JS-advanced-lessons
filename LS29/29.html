@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        将类数组结构转化为数组
+    */
+    console.log(Array.from("abcdefg"));
+    function fn1(){
+        Array.from(arguments);
+    }
+    fn1(1,2,3);
+
+    /*
+        Array.of将单个的元素转化为数组
+    */
+    console.log(Array.of(1,2,3));
+</script>
+</html>

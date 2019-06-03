@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        .imgborder{
+            border:5px solid green;
+        }
+    </style>
+</head>
+<body>
+    <img src="../4.jpg" id="img4" class="bg">
+    <button id="btn">改变属性</button>
+    <button id="btn1">改变class</button>
+</body>
+<script>
+    $("#btn").click(function(){
+        $("#img4").attr("src","../3.jpg");
+        $("#img4"),attr("title","这是一张图片");
+        alert($("#img4").attr("title"));
+        //移除特定属性
+        $("#img4").removeAttr("title");
+    })
+    $("#btn1").click(function(){
+        $("#img4").addClass("imgborder");
+        $("#img4").removeClass("imgborder");
+    })
+    $("#img4").mouseover(function(){
+         $("#img4").addClass("imgborder");
+    })
+    /*
+    1.$()
+    $(":eq()") $("td:even")
+    $("td:odd") $("td:gt(index)")
+    $("td:lt(index)")
+    $(":text")
+    2.
+    mouseover() mouseout() blur() focus() click()
+    3.
+    append() appendTo() after() insertAfter() 
+    before() insertBefore() 
+    prepend() perpendTO()
+    4.val() html()
+    css() attr() addClass() removeClass()
+    */
+</script>
+</html>

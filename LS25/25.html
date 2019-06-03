@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    不会阻塞主线程执行，在满足特定条件时会反馈到主线程
+    */
+    widow.onload=function(){
+        console.log("页面加载完成");
+    }
+    console.log("主线程");
+
+    var intervalId=setInterval(function(){
+        console.log(i++);
+    },3000)
+</script>
+</html>

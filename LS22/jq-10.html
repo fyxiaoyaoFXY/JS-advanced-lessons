@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        div{
+            height:200px;
+            width:200px;
+            background:purple;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button id="slideDown">slideDown</button>
+    <button id="slideUp">slideUp</button>
+    <button id="fadein">fadein</button>
+    <button id="fadeout">fadeout</button>
+    <button id="animate">动</button>
+</body>
+<script>
+    /*
+    改变元素的高度来切换显示和隐藏
+    */
+    $("slideUp").click(function(){
+        $("div").slideUp(2000);
+    })
+    $("#slideDown").click(function(){
+        $("div").slideDown(4000);
+    })
+    //改变元素的透明度来切换显示和隐藏
+    $("#fadein").click(function(){
+        $("div").fadeIn(4000);
+    })
+    $("#fadeout").click(function(){
+        $("div").fadeOut(4000);
+    })
+    $("animate").click(function(){
+        $("div").animate({
+            "margin-left":"500px"
+        },3000);
+    })
+</script>
+</html>

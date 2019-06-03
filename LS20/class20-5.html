@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    '\d'表示的数组;
+    '\.'表示任意的一个字符；
+    '\s'表示空格
+    \w表示[A-Za-z0-9]
+    */
+    var reg = /\d.\s\w/gi;
+
+    /*
+    [abc]在集合中随机取一个元素
+    [^abc]排除集合中以外的其他元素
+    */
+    var reg1 = /[xyz]a/gi;
+    var str1 = "xabjiya";
+    str1.replace(reg1,"m");
+
+    /*
+    ^a 以特定字符起始
+    b$以特定的字符结束
+    */
+
+    /*
+    量词
+    a*字符出现0次 多次
+    a+字符出现1次 多次
+    a?字符出现0次 1次
+    */
+
+
+
+</script>
+</html>

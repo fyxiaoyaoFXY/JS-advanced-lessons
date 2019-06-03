@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Person(name){
+        this.name=name;
+    }
+    Person.prototype.age=20;
+    Person.prototype.showName=function(){
+        console.log(this.name);
+    }
+    function Student(id){
+        this.id=id;
+    }
+    /*
+    person name属性是Mike，person.__proto__.age,
+    person.__proto__.showName
+    */
+    Student.prototype=new Person("Mike");
+    var s1=new Student(2018011);
+    var s2=new Student(2018002);
+    console.log(s1.id,s2.id);
+    /*
+    s1自身上面没有age,s1.__proto__==Student.prototype
+    Student.prototype=person;
+    person对象上没有age属性
+    s1.__proto__.__proto==person.__proto__
+    person.__proto__==person.prototype;
+    */
+    console.log(s1.age,s2.age);
+    console.log(s1.name,s2.name);
+</script>
+</html>

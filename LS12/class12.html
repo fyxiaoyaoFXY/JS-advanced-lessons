@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //初始结构
+    function fn(){
+        var arr1 = [];
+        for(var i = 0;i < 10;i++){
+            arr1[i] = function(){
+                return 1;
+            }
+        }
+        return arr1;
+    }
+    //等价结构
+    var i = 0;
+    arr1[0] = function(){
+        return i;
+    }
+    arr1[1] = function(){
+        return i;
+    }
+    fn()[0]();
+    //return的i是共有的
+    //只是完成了函数的定义，此时并没有执行
+
+    //外部调用执行时，循环已经结束了。i值已达到最大值，且i值是共享的，因此所有的i都为10
+
+    //立即执行函数
+    //每次循环形成自己的作用域，把i的当前值传进去，让函数内的内容立即执行
+    function fn(){
+        var arr1 = [];
+        for(var i = 0;i < 10;i++){
+            (function(j){
+                arr1[j] = function(){
+                    return j;
+                }
+            })(i)
+        }
+        return arr1;
+    }
+
+    //等价类型
+    //j值在她自己的作用域里起作用
+    (function(j){
+        arr1[j] = function(){
+            return j;
+        }
+    })(0)
+    (function(j){
+        arr1[j] = function(){
+            return j;
+        }
+    })(1)
+    //避免变量的非期望共享
+
+    //减少查找过程，作为局部变量直接使用，不需要再去外部查找
+    (function(w,d){
+        d.getElementById()
+    })(window.document)
+
+    //作用域查找，作用域链越长，代码执行效率越低
+    (function(){
+        document.getElementById()
+    })
+    (function(w,d){
+        var spanList = document.getElementsByTagName("span");
+        var show = document.getElementsByClassName("show")[0];
+        for(var i = 0;i < spanList.length;i++){
+            (function(j){
+                spanList[j].onclick = function(){
+                    show.innerText = "导航"+j+"内容";
+                }
+            })(i)//形成作用域，每个作用域内j值不相同
+
+            spanList(i).onclick = function(){
+                show.innerText = "导航"+i+"内容"//触发点击事件时，i值循环已经结束，i为最大值
+            }
+        }
+    })(window.document)
+
+    //三次延迟执行，结果都为3
+    for(var i = 0;i < 3;i++){
+        setTimeout(function(){
+            console.log(new Date(),i);
+        },i*1000);
+    }
+    //嵌套立即执行函数，三次延迟执行，结果为0、1、2
+    for(var i = 0;i < 3;i++){
+    (function(j){
+        setTimeout(function(){
+            console.log(new Date(),j);
+        },j*1000);
+    })(i);
+}
+</script>
+</html>

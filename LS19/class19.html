@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //第一种实例化的方式
+    var date1=new Date();
+
+    var year=date1.getFullYear();
+    var month=date1.getMonth();
+
+    var date2=new Date(year,month);
+    console.log(date2);
+    //第二种/指明时间日期的字符串
+    var date3=new Date("2019-05-05");
+    console.log(date3);
+
+    //第三种、指明一个毫秒未到位的数字类型
+    var date4=new Date(Date.now());
+    console.log(date4);
+
+
+</script>
+</html>

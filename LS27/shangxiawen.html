@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //上下文，当某行代码执行过程中，他的上下文环境，当前作用域包含的变量，函数调用栈，this指向
+    function foo(){
+        var a = 1;
+        var b = 2;
+        function bar(){
+            var c = 3;
+            var d = 4;
+        }
+        bar();
+    }
+    foo();
+</script>
+</html>

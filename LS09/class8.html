@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+
+    console.log(foo);
+    //这种情况只会对变量进行定义的提升
+    var foo = function(){
+        console.log("hello world");
+    }
+
+    var a = 1;//全局变量 所有位置都可以访问
+    function fn1(){
+        console.log(a);//1
+        var b = 2;
+        var c = 3;
+        function fn2(){
+            c = 30;
+            var d = 4;
+            console.log(c);//30
+        }
+        fn2();
+        console.log(c);
+    }
+    fn1();
+    console.log(c)
+
+</script>
+</html>

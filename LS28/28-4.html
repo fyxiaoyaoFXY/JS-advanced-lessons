@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let reg1=/xyz/gi;
+    let reg2=new RegExp("xyz","gi");
+    let reg3=new RegExp(/xyz/gi);
+    let reg3=new RegExp(/xyz/gi,'i');
+
+    /*
+    正则表达式对象.flags获取正则表达式修饰符
+    */
+    console.log(reg1.flags);
+
+    /*
+        sticky y修饰符 他会从上一次匹配成功的结束位置开始匹配
+    */
+    let str="aaa_aa_a";
+    let reg5=/a+/g;
+    let reg6=/a+/y;
+    console.log(reg5.exec(str));
+    reg5.exec(str);
+
+    console.log(reg6.exec(str));
+    //上一次匹配结果的索引位置
+    reg6.lastIndex;
+    console.log(reg6.exec(str));
+    //可以根据 正则对象.sticky属性判断是否设置y属性
+    console.log(reg6.sticky);
+</script>
+</html>

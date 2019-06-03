@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let {bar, foo}={foo:"foo1",bar:"bar1"};
+    console.log(bar, foo);
+    //对象结构赋值，根据键名来进行匹配，然后完成赋值
+    //字符串
+    let str=new String("abcdef");
+    let [a,b,c,d]=str;
+    console.log(a,b,c,d);
+
+    let[e,f]="ef";
+    console.log(e,f);
+    //number
+    //number上面会有tostring的方法
+    let num=new Number(5);
+    console.log(num.toString);
+
+    let{toString:s1}=num;
+    console.log(s1);
+
+</script>
+</html>

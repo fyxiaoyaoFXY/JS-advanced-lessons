@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1.
+    var obj1 = {z:1};
+    var obj2 = Object.create(obj1);
+
+    console.log(obj1.__proto__==Object.prototype);
+    console.log(obj2.__proto__);//obj1
+    console.log(obj2.__proto__.__+proto__);
+    console.log(obj2.__proto__.__proto__.__proto__);
+    //2.
+    var obj1 = {z:1,sayHi:function(){
+        console.log(this.z);
+    }};
+    var obj2 = Object.create(ojb1);
+    obj2.z;
+    obj2.sayHi();//最简单的继承
+    //3.
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+
+        this.sayHi = function(){
+            console.log(this.username);
+        }
+    }
+    Person.prototype.sayHi=function(){
+        console.log(this.username);
+    }
+    var person = new Person("zhangsan",30);
+    console.log(person1.__proto__==person.__proto__);
+    console.log(person.__proto__ == Person.prototype);
+    //person1和person2 共用sayhi为了节省内存空间
+    person1.sayHi();//自身上面没有去原型找
+    person2.sayHi();
+    
+
+</script>
+</html>
